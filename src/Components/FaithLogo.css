@@ -1,0 +1,77 @@
+.faith-logo {
+    position: relative;
+}
+.faith-logo .upper-bar,
+.faith-logo .lower-bar {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+}
+.faith-logo .upper-bar {
+    background-color: var(--color-primary);
+    min-height: 4.7rem;
+}
+.faith-logo .lower-bar {
+    background-color: var(--color-secondary);
+    min-height: 2.8rem;
+}
+@media (min-width: 481px) {
+    .faith-logo .upper-bar,
+    .faith-logo .lower-bar {
+        justify-content: center;
+        padding-left: 0;
+    }
+}
+
+.faith-logo h1,
+.faith-logo h2 {
+    color: white;
+    font-weight: 400;
+    line-height: 100%;
+    margin: 0;
+}
+.faith-logo h1 {
+    font-family: var(--font-title);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    transform: translateY(0.8rem);
+}
+.faith-logo h1 .connector {
+    color: var(--color-accent);
+    display: inline-block;
+    font-size: 1.3rem;
+    text-transform: none;
+    transform: rotate(-25deg) translateY(-5px);
+    margin-right: -8px;
+}
+.faith-logo h2 {
+    font-weight: 200;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateY(-2px);
+    word-spacing: 2px;
+}
+.faith-logo::after {
+    --margin: 12px;
+    border: 2px dashed hsla(0, 100%, 100%, .3);
+    box-sizing: border-box;
+    content: "";
+    height: calc(100% - var(--margin));
+    left: calc(var(--margin) / 2);
+    position: absolute;
+    top: calc(var(--margin) / 2);
+    width: calc(100% - var(--margin));
+}
+@media (max-width: 381px) {
+    .faith-logo h1 {
+        font-size: 1.6rem;
+    }
+    .faith-logo h1 .connector {
+        font-size: 0.95rem;
+    }
+    .faith-logo h2 {
+        font-size: 0.95rem;
+    }
+}

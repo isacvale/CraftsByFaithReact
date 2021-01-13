@@ -1,0 +1,108 @@
+.faith-header {
+    display: grid;
+    grid-template-areas:
+        'logo nav'
+        'logo categories';
+    grid-template-columns: minmax(min-content, 20rem) auto;
+    grid-template-rows: 4.7rem 2.8rem;
+    padding: 2rem var(--section-margin);
+}
+@media (max-width: 481px) {
+    .faith-header {
+        grid-template-areas:
+            'logo'
+            'nav'
+            'categories';
+        grid-template-columns: 100%;
+        padding: 0;
+    }
+}
+
+.faith-header > .faith-logo {
+    grid-area: logo;
+}
+
+.faith-header > .main-nav,
+.faith-header > .categories {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.faith-header > .main-nav {
+    border-top: 2px dashed var(--color-accent-L);
+    grid-area: nav;
+    height: 100%;
+    margin-left: 1rem;
+    margin-top: 4px;
+}
+
+.faith-header > .categories {
+    border-bottom: 2px dashed var(--color-accent-L);
+    border-top: 2px dashed var(--color-accent-L);
+    grid-area: categories;
+    margin-bottom: 4px;
+    margin-left: 1rem;
+}
+
+.faith-header a,
+.faith-header ._selected {
+    color: var(--color-primary);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+}
+.main-nav > a,
+.main-nav > ._selected {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    outline: none;
+    position: relative;
+    text-transform: uppercase;
+}
+.main-nav > a::after,
+.main-nav > a::after {
+    background: var(--color-primary);
+    content: '';
+    bottom: -0.5rem;
+    height: 0.1rem;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    transition: width 0.4s;
+    width: 0%;
+}
+.main-nav > a:focus::after,
+.main-nav > a:hover::after {
+    width: 100%;
+}
+.main-nav > ._selected {
+    color: var(--color-secondary);
+    pointer-events: none;
+}
+.main-nav > ._selected::after {
+    background: var(--color-accent);
+    content: '';
+    bottom: -0.7rem;
+    height: 0.5rem;
+    left: -0.5rem;
+    position: absolute;
+    width: calc(100% + 1rem);
+}
+.main-nav .link-icon {
+    position: relative;
+    top: 0.2rem;
+}
+.main-nav > .link-icon::after,
+.main-nav > .link-icon::after {
+    bottom: -0.1rem;
+}
+.categories a {
+    margin-left: 0.5rem;
+    font-weight: 400;
+}
+.link-icon > img {
+    height: 1.6rem;
+}
