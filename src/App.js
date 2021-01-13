@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
+  // Link,
 } from 'react-router-dom'
 import ProductsPage from 'Pages/Products'
 import AboutUsPage from 'Pages/AboutUs'
@@ -13,17 +13,17 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Router path='/'>
+        <Route path='/'>
           <ProductsPage />
-        </Router>
+        </Route>
 
-        <Router path='/about'>
+        <Route path='/about'>
           <AboutUsPage />
-        </Router>
+        </Route>
         
-        <Router path='/gallery'>
+        <Route path='/gallery'>
           <GalleryPage />
-        </Router>
+        </Route>
       </Switch>
     </Router>
   );
