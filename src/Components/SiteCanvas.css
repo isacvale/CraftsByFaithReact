@@ -1,0 +1,8 @@
+.SiteCanvas._tablet {
+    margin: 2rem;
+  }
+  .SiteCanvas._desktop {
+    margin: 2rem auto;
+    max-width: 1600px;
+    width: 90vw;
+  }

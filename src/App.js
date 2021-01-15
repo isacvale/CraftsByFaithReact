@@ -9,23 +9,23 @@ import ProductsPage from 'Pages/Products'
 import AboutUsPage from 'Pages/AboutUs'
 import GalleryPage from 'Pages/Gallery'
 
-function App() {
+const App = () => {  
   return (
-    <Router>
-      <Switch>
-        <Route path='/'>
-          <ProductsPage />
-        </Route>
+      <Router>
+        <Switch>
+          <Route path='/about'>
+            <AboutUsPage />
+          </Route>
+          
+          <Route path='/gallery'>
+            <GalleryPage />
+          </Route>
 
-        <Route path='/about'>
-          <AboutUsPage />
-        </Route>
-        
-        <Route path='/gallery'>
-          <GalleryPage />
-        </Route>
-      </Switch>
-    </Router>
+          <Route path='/'>
+              <ProductsPage />
+          </Route>
+        </Switch>
+      </Router>
   );
 }
 

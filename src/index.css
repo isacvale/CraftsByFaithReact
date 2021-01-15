@@ -6,14 +6,20 @@
 
 :root {
   --color-blue: hsla(205, 28%, 47%, 1);
+  --color-blue-l: hsla(205, 18%, 17%);
+  --color-blue-la: hsla(205, 18%, 17%, 0.5);
   --color-pink: hsla(351, 45%, 66%, 1);
   --color-pink-L: hsla(351, 55%, 80%, 1);
   --color-pink-LL: hsla(351, 55%, 92%, 1);
+  --color-beige: #d2d0ba;
 
   --color-primary: var(--color-blue);
   --color-secondary: var(--color-pink);
   --color-accent: var(--color-pink-L);
   --color-accent-L: var(--color-pink-LL);
+  --color-tertiary: var(--color-beige);
+
+  --color-shadow: hsla(0, 0%, 0%, 0.08);
 }
 
 /**
@@ -42,5 +48,14 @@ body {
   General Rules
 **/
 :root {
-  --section-margin: 8vw;
+  --b-radius: 0.6rem;
+  --b-width: 2px;
+  --b-color: var(--color-secondary);
+  font-size: calc(10px + 1vw);
+}
+@media (min-width: 480px) {
+  :root {
+    font-size: 16px;
+    background-color: unset;
+  }
 }

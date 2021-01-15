@@ -3,19 +3,23 @@
     grid-template-areas:
         'logo nav'
         'logo categories';
+    position: relative;
+}
+.faith-header._mobile {
+    grid-template-areas:
+        'logo'
+        'categories';
+    grid-template-columns: 100%;
+}
+.faith-header._tablet {
+    grid-template-areas:
+        'logo nav'
+        'logo categories';
+}
+.faith-header._tablet,
+.faith-header._desktop {
     grid-template-columns: minmax(min-content, 20rem) auto;
     grid-template-rows: 4.7rem 2.8rem;
-    padding: 2rem var(--section-margin);
-}
-@media (max-width: 481px) {
-    .faith-header {
-        grid-template-areas:
-            'logo'
-            'nav'
-            'categories';
-        grid-template-columns: 100%;
-        padding: 0;
-    }
 }
 
 .faith-header > .faith-logo {
@@ -105,4 +109,83 @@
 }
 .link-icon > img {
     height: 1.6rem;
+}
+
+.Header__MenuRoundButton {
+    --btn-size: 3.4rem;
+    /* background-color: hsla(0, 0%, 75%, 1); */
+    align-items: center;
+    background-color: var(--color-tertiary);
+    border: none;
+    border-radius: 100%;
+    box-shadow: 0 2px 4px 2px var(--color-shadow);
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 1rem;
+    top: 3rem;
+    transition: box-shadow 0.4s;
+    height: var(--btn-size);
+    width: var(--btn-size);
+}
+.Header__MenuRoundButton:focus,
+.Header__MenuRoundButton:hover {
+    box-shadow: 0 0px 0px 3px var(--color-blue-la);
+    outline: none;
+}
+
+.Header__MenuRoundButton::after {
+    --inner-size: calc(var(--btn-size) - 12px);
+    border: 2px dashed var(--color-accent-L);
+    border-radius: 100%;
+    content: '';
+    height: var(--inner-size);
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    width: var(--inner-size);
+}
+
+.UnderMenuCategory {
+    align-items: center;
+    border-bottom: 2px dashed var(--color-accent-L);
+    display: flex;
+    height: 2.6rem;
+    justify-content: flex-end;
+}
+
+.UnderMenuCategory .__Select {
+    appearance: none;
+    background: linear-gradient(to bottom, #ffffff 30%, var(--color-tertiary) 180%);
+	background-size: .65em auto, 100%;
+    border: var(--b-width) solid var(--b-color);
+    border-radius: var(--b-radius);
+    box-sizing: border-box;
+    color: var(--color-primary);
+    display: inline-block;
+    letter-spacing: 0.4px;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 2rem;
+    max-width: 50vw;
+    min-width: 30vw;
+    padding: 0.2rem 0.6rem;
+    position: relative;
+    width: 12rem;
+}
+/* .UnderMenuCategory .__Select::after {
+    content: "v";
+    position: absolute;
+    right: 0;
+    top: 25%;
+} */
+
+.DesktopMenu__CategoryLabel {
+    color: var(--color-pink);
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+}
+
+.DesktopMenu__CategoryLabel > span {
+    margin-right: 0.8rem;
 }
