@@ -22,7 +22,7 @@ const uiStore = observable({
     updateScreen: function () {
         this.setValue('width', window.innerWidth)
         this.setValue('height', window.innerHeight)
-        this.setValue('screen', uiStore.width <= 480
+        this.setValue('screen', uiStore.width <= 640
             ? 'mobile'
             : this.width <= 1100
                 ? 'tablet'

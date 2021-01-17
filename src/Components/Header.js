@@ -43,12 +43,12 @@ const DesktopMenu = () =>
     <section className="categories">
         <span className='DesktopMenu__CategoryLabel'>choose a category</span>
         <nav>
-            <Link to="/">Blankets</Link>
-            <Link to="/">Animals</Link>
-            <Link to="/">Snuggles</Link>
-            <Link to="/">Hats</Link>
-            <Link to="/">Mittens</Link>
-        </nav>
+            <Link interactive='true' to="/">Blankets</Link>
+            <Link interactive='true' to="/">Animals</Link>
+            <Link interactive='true' to="/">Snuggles</Link>
+            <Link interactive='true' to="/">Hats</Link>
+            <Link interactive='true' to="/">Mittens</Link>
+        </nav>                                                                                                                                                                                                                                                                                                                                                      
     </section>
 </>
 
@@ -56,16 +56,19 @@ const TabletFauxMenu = () => {
     return (
         <>
             <nav className="main-nav" />
-            <section className="categories" />
+            <section className="categories">
+                <UnderMenuCategory smallLabel />
+            </section>
         </>
     )
 }
 
 const MenuRoundButton = observer(() => {
-    const { isMenuButtonOpen } = uiStore
+    const { screen, isMenuButtonOpen } = uiStore
+
     return (
         <button
-            className='Header__MenuRoundButton'
+            className={`Header__MenuRoundButton interactive ${screen}`}
             onClick={() => uiStore.setValue('isMenuButtonOpen', !isMenuButtonOpen)}
         >
             <Burger />
@@ -73,22 +76,70 @@ const MenuRoundButton = observer(() => {
     )
 })
 
-const UnderMenuCategory = () => {
+const UnderMenuCategory = observer(props => {
+    const { screen } = uiStore
+    // const categoryLabel = props.smallLabel
+    //     ? 'category'
+    //     : 'choose a category'
+    const categoryLabel = 'category'
+
     return (
-        <div className='UnderMenuCategory'>
+        <div className={`UnderMenuCategory ${screen}`}>
             <label className='DesktopMenu__CategoryLabel'>
-                <span>choose a category</span>
-                <select className="__Select">
-                    <option>Blankets</option>
-                    <option>Animals</option>
-                    <option>Snuggles</option>
-                    <option>Hats</option>
-                    <option>Mittens</option>
-                </select>
+                <span>{categoryLabel}</span>
+                <span className='__Select_container'>
+                    <select className="__Select interactive">
+                        <option>Blankets</option>
+                        <option>Animals</option>
+                        <option>Snuggles</option>
+                        <option>Hats</option>
+                        <option>Mittens</option>
+                    </select>
+                </span>
             </label>
         </div>
     )
-}
+})
+
+const HeaderNavSelect = observer(() => {
+    const { isMenuButtonOpen, screen } = uiStore
+    if (screen === 'desktop')
+        return null
+    
+    const links = [
+        'products',
+        'gallery',
+        'about us',
+        'e-mail',
+        'facebook',
+        'twitter'
+    ]
+    
+    return (
+        <nav className={`HeaderNavSelect ${isMenuButtonOpen ? '--open' : ''}`}>
+            { links.map(cur => 
+                <HeaderNavSelectItem key={cur} name={cur} link='/' />
+            )}
+        </nav>
+    )
+})
+
+const HeaderNavSelectItem = observer(props => {
+    const { isMenuButtonOpen } = uiStore
+    const { link, name } = props
+
+    return (
+        <div className='HeaderNavSelect__ItemContainer'>
+            <Link
+                className='HeaderNavSelect__Item interactive'
+                to={link}
+                tabIndex={isMenuButtonOpen ? null : '-1'}
+            >
+                    {name}
+                </Link>
+        </div>
+    )
+})
 
 const Header = observer(() => {
     const { screen } = uiStore
@@ -98,10 +149,11 @@ const Header = observer(() => {
             <header className={`faith-header _${screen}`}>
                 <FaithLogo />
                 { screen === 'desktop' ? <DesktopMenu /> : null }
-                { screen === 'tablet' ? <TabletFauxMenu /> : null }
                 { screen !== 'desktop' ? <MenuRoundButton /> : null }        
+                { screen === 'tablet' ? <TabletFauxMenu /> : null }
             </header>
-            <UnderMenuCategory />
+            <HeaderNavSelect />
+            { screen === 'mobile' ? <UnderMenuCategory /> : null }
         </section>
     )
 })

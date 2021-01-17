@@ -113,25 +113,29 @@
 
 .Header__MenuRoundButton {
     --btn-size: 3.4rem;
-    /* background-color: hsla(0, 0%, 75%, 1); */
     align-items: center;
-    background-color: var(--color-tertiary);
     border: none;
     border-radius: 100%;
     box-shadow: 0 2px 4px 2px var(--color-shadow);
     display: flex;
     justify-content: center;
     position: absolute;
-    right: 1rem;
     top: 3rem;
     transition: box-shadow 0.4s;
     height: var(--btn-size);
     width: var(--btn-size);
 }
-.Header__MenuRoundButton:focus,
-.Header__MenuRoundButton:hover {
+.Header__MenuRoundButton.mobile {
+    background-color: var(--color-tertiary);
+    right: 1rem;
+}
+.Header__MenuRoundButton.mobile:focus,
+.Header__MenuRoundButton.mobile:hover {
     box-shadow: 0 0px 0px 3px var(--color-blue-la);
-    outline: none;
+}
+.Header__MenuRoundButton.tablet {
+    background-color: white;
+    right: 0;
 }
 
 .Header__MenuRoundButton::after {
@@ -145,13 +149,19 @@
     top: 4px;
     width: var(--inner-size);
 }
+._tablet > .Header__MenuRoundButton {
+    top: 1rem;
+}
 
 .UnderMenuCategory {
     align-items: center;
-    border-bottom: 2px dashed var(--color-accent-L);
     display: flex;
     height: 2.6rem;
     justify-content: flex-end;
+}
+.UnderMenuCategory.mobile {
+    border-bottom: 2px dashed var(--color-accent-L);
+    justify-content: center;
 }
 
 .UnderMenuCategory .__Select {
@@ -173,12 +183,20 @@
     position: relative;
     width: 12rem;
 }
-/* .UnderMenuCategory .__Select::after {
-    content: "v";
+.__Select_container {
+    position: relative;
+}
+.__Select_container::after {
+    color: var(--color-primary);
+    content: "▲";
+    content: "▼";
+    display: block;
     position: absolute;
-    right: 0;
-    top: 25%;
-} */
+    right: 0.4rem;
+    top: 0.1rem;
+    transform: scaleY(0.6);
+    z-index: 10;
+}
 
 .DesktopMenu__CategoryLabel {
     color: var(--color-pink);
@@ -186,6 +204,55 @@
     font-size: 1.2rem;
 }
 
-.DesktopMenu__CategoryLabel > span {
+.DesktopMenu__CategoryLabel > span:first-child {
     margin-right: 0.8rem;
+}
+
+.HeaderNavSelect {
+    background: hsl(0, 0%, 98%);
+    background: linear-gradient( 180deg,
+        hsl(0, 0%, 100%) 12%,
+        hsl(0, 0%, 97%) 100%
+    );
+    border-bottom: 0px dashed var(--color-accent-L);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    padding: 0 25%;
+    overflow: hidden;
+    transition: max-height 0.4s, padding 0.4s;
+}
+
+.HeaderNavSelect.--open {
+    border-bottom: 2px dashed var(--color-accent-L);
+    max-height: 500px;
+    padding: 1rem 25%;
+}
+
+.HeaderNavSelect__ItemContainer {
+    align-items: center;
+    background-color: transparent;
+    border-bottom: 2px dashed var(--color-accent-L);
+    display: flex;
+    min-height: 2.4rem;
+    justify-content: center;
+}
+.HeaderNavSelect__Item {
+    background-color: transparent;
+    display: inline-block;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    /* transform: background-color 0.4s, color 0.4s; */
+    width: 80%;
+}
+.HeaderNavSelect__Item:focus,
+.HeaderNavSelect__Item:hover {
+    background-color: var(--color-accent-L);
+    /* color: white; */
+    /* width: 80%; */
 }
