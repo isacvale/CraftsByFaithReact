@@ -1,0 +1,21 @@
+/* .Money {
+
+} */
+
+.Money_currency,
+.Money_dollars,
+.Money_cents {
+    letter-spacing: 0.5px;
+} 
+
+.Money_currency {
+    margin-right: 0.2rem;
+}
+
+.Money_dollars {
+    font-size: 2rem;
+}
+
+.Money_cents {
+    margin-left: 0.2rem;
+}
