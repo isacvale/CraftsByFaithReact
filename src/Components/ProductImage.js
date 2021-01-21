@@ -11,11 +11,13 @@ const ProductImage = props => {
                 <img
                     className='ProductImage_arrow_left'
                     src={arrowIcon}
+                    alt=''
                 />
                 <div>12/30</div>
                 <img
                     className='ProductImage_arrow_right'
                     src={arrowIcon}
+                    alt=''
                 />
             </div>
         </div>
