@@ -6,14 +6,16 @@ import './ProductImage.css'
 const ProductImage = props => {
     return (
         <div className='ProductImage'>
-            <img alt='Main pic.' className='ProductImage_MainImage' src={mainImage} />
+            <div className='ProductImage_InnerCanvas'>
+                <img alt='Main pic.' className='ProductImage_MainImage' src={mainImage} />
+            </div>
             <div className='ProductImage_controllers'>
                 <img
                     className='ProductImage_arrow_left'
                     src={arrowIcon}
                     alt=''
                 />
-                <div>12/30</div>
+                <div className='ProductImage_pagination'>12/30</div>
                 <img
                     className='ProductImage_arrow_right'
                     src={arrowIcon}

@@ -62,8 +62,9 @@
 
 ._desktop .ProductDetails_main {
     padding: 1rem 0;
+    gap: 2rem;
     grid-template-areas:
-        "text image";
-    grid-template-columns: auto 24rem;
+        "image text cart";
+    grid-template-columns: repeat(3, 1fr);
     /* background: palegoldenrod; */
 }

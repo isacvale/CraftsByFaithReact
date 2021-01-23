@@ -1,5 +1,6 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
+import AddToCart from 'Components/AddToCart'
 import Money from 'Components/Money'
 import ProductImage from 'Components/ProductImage'
 import { productStore, uiStore } from 'Stores'
@@ -15,6 +16,9 @@ const ProductDetails = observer(() => {
             </header>
 
             <div className='ProductDetails_main'>
+
+                <ProductImage />
+
                 <div className='ProductDetails_main_text'>
                     {
                         productStore.description.map((text, idx) =>
@@ -49,7 +53,8 @@ const ProductDetails = observer(() => {
                         )
                     }
                 </div>
-                <ProductImage />
+
+                <AddToCart />
             </div>
 
         </section>

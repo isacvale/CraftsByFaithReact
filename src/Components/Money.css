@@ -12,8 +12,26 @@
     margin-right: 0.2rem;
 }
 
-.Money_dollars {
-    font-size: 2rem;
+.Money_currency,
+.Money_dollars,
+.Money_cents {
+}
+
+.Money_currency,
+.Money_cents {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+    font-weight: 400;
+}
+
+.Money_currency{
+}
+
+.Money_dollars  {
+    color: var(--color-primary);
+    font-size: 2.4rem;
+    font-weight: 900;
 }
 
 .Money_cents {

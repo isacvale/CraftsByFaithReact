@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Source+Sans+Pro:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Source+Sans+Pro:wght@200;400;600;900&display=swap');
 
 /**
     Colors
@@ -13,6 +13,7 @@
   --color-pink-LL: hsla(351, 55%, 92%, 1);
   --color-beige: #d2d0ba;
   --color-offwhite: hsl(60, 14%, 97%);
+  --color-grey: hsl(60, 14%, 47%);
   --color-dark: hsla(205, 18%, 10%);
   --color-dark-L: hsla(205, 18%, 30%);
 
@@ -23,6 +24,7 @@
   --color-tertiary: var(--color-beige);
 
   --color-shadow: hsla(0, 0%, 0%, 0.08);
+  --color-shadow-l: hsla(0, 0%, 0%, 0.32);
 }
 
 /**
