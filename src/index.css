@@ -8,6 +8,8 @@
   --color-blue: hsla(205, 28%, 47%, 1);
   --color-blue-l: hsla(205, 18%, 17%);
   --color-blue-la: hsla(205, 18%, 17%, 0.5);
+  --color-blue-L: hsla(205, 28%, 57%, 1);
+  --color-blue-sL: hsla(205, 12%, 37%, 0.5);
   --color-pink: hsla(351, 45%, 66%, 1);
   --color-pink-L: hsla(351, 55%, 80%, 1);
   --color-pink-LL: hsla(351, 55%, 92%, 1);
@@ -89,4 +91,11 @@ body {
   font-weight: 00;
   font-family: var(--font-title);
   margin-right: 0.5rem;
+}
+
+.textInput {
+  border: 1px solid var(--color-blue-sL);
+  border-radius: var(--b-radius);
+  box-sizing: border-box;
+  padding: var(--b-radius);
 }
