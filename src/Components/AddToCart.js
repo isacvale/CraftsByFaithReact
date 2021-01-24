@@ -22,6 +22,19 @@ const AddToCardOption = props => {
     )
 }
 
+const AddToCardButton = props => {
+    const { children: label } = props
+    return (
+        <div className='AddToCardButton_Container'>
+            <button
+                className='AddToCardButton interactive-l'
+            >
+                {label}
+            </button>
+        </div>
+    )
+}
+
 const AddToCart = () => {
     return (
         <form className='AddToCard'>
@@ -51,9 +64,9 @@ const AddToCart = () => {
             </section>
 
             <section className='AddToCard_Buttons'>
-                <button>Add to cart</button>
-                <button>Add another to cart</button>
-                <button>Remove from cart</button>                
+                <AddToCardButton>Add to cart</AddToCardButton>
+                <AddToCardButton>Add another to cart</AddToCardButton>
+                <AddToCardButton>Remove from cart</AddToCardButton>                
             </section>
         </form>
     )

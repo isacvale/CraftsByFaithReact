@@ -1,0 +1,25 @@
+.CartSummary {
+    display: flex;
+    padding: 0 1rem;
+}
+._mobile .CartSummary,
+._tablet .CartSummary {
+}
+._desktop .CartSummary {
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.CartSummaryProductList {
+    display: flex;
+    gap: 0.3rem;
+}
+._mobile .CartSummaryProductList,
+._tablet .CartSummaryProductList {
+    margin: 0 1rem;
+    padding-top: 1rem;
+}
+._desktop  .CartSummaryProductList {
+    flex-direction: column;
+    margin-top: 1rem;
+}

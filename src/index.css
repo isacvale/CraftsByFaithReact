@@ -9,15 +9,18 @@
   --color-blue-l: hsla(205, 18%, 17%);
   --color-blue-la: hsla(205, 18%, 17%, 0.5);
   --color-blue-L: hsla(205, 28%, 57%, 1);
+  --color-blue-s: hsla(205, 16%, 30%, 1);
   --color-blue-sL: hsla(205, 12%, 37%, 0.5);
   --color-pink: hsla(351, 45%, 66%, 1);
   --color-pink-L: hsla(351, 55%, 80%, 1);
   --color-pink-LL: hsla(351, 55%, 92%, 1);
-  --color-beige: #d2d0ba;
+  --color-beige: hsla(55, 21%, 78%, 1);
+  --color-beige-l: hsla(55, 21%, 63%, 1);
   --color-offwhite: hsl(60, 14%, 97%);
   --color-grey: hsl(60, 14%, 47%);
   --color-dark: hsla(205, 18%, 10%);
   --color-dark-L: hsla(205, 18%, 30%);
+  --color-yellow: #e8df7a;
 
   --color-primary: var(--color-blue);
   --color-secondary: var(--color-pink);
@@ -27,6 +30,8 @@
 
   --color-shadow: hsla(0, 0%, 0%, 0.08);
   --color-shadow-l: hsla(0, 0%, 0%, 0.32);
+  --color-shadow-ll: hsla(0, 0%, 0%, 0.52);
+  --color-shadow-L: hsla(0, 0%, 0%, 0.06);
 }
 
 /**
@@ -69,12 +74,18 @@ body {
   }
 }
 
-.interactive {
+.interactive,
+.interactive-l {
   transition: box-shadow 0.4s;
 }
 .interactive:hover,
-.interactive:focus {
+.interactive:focus{
   box-shadow: 0 0 0 3px var(--color-tertiary);
+  outline: none;
+}
+.interactive-l:hover,
+.interactive-l:focus {
+  box-shadow: 0 0 0 3px var(--color-beige-l);
   outline: none;
 }
 
@@ -86,7 +97,6 @@ body {
   font-size: 3rem;
   line-height: 2.6rem;
   width: 3.4rem;
-  /* display: inline-block; */
   padding: 0.5rem;
   font-weight: 00;
   font-family: var(--font-title);
@@ -97,5 +107,11 @@ body {
   border: 1px solid var(--color-blue-sL);
   border-radius: var(--b-radius);
   box-sizing: border-box;
-  padding: var(--b-radius);
+  color: var(--color-primary-l);
+  font-family: var(--font-copy);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  padding:
+    calc(1.4 * var(--b-radius))
+    calc(2 * var(--b-radius));
 }

@@ -95,9 +95,6 @@
     width: 100%;
 }
 
-
-
-
 .AddToCard_PickInitials > label {
     display: flex;
     flex-direction: column;
@@ -106,4 +103,30 @@
 .AddToCard_Buttons {
     display: flex;
     flex-direction: column;
+}
+
+.AddToCardButton {
+    background: var(--color-yellow);
+    background: linear-gradient(
+        180deg,
+        white -130%,
+        var(--color-yellow) 60%
+    );
+    border: none;
+    border-radius: var(--b-radius);
+    color: var(--color-blue-s);
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    /* margin: 0.3rem; */
+    padding: var(--b-radius);
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.AddToCardButton_Container {
+    border-radius: var(--b-radius);
+    box-shadow: 0 0.05rem 0.2rem 0.1rem var(--color-shadow-L);
+    margin: 0.3rem 0;
 }

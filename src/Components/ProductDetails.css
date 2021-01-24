@@ -1,7 +1,7 @@
 .ProductDetails {
     background: white;
     box-shadow: 0 0 0.4rem 0.4rem hsla(0, 0%, 0%, 0.05);
-    margin: 2rem 0;
+    margin: 2rem 0 1rem;
     padding: 2rem;
     position: relative;
 }
@@ -58,13 +58,48 @@
 
 .ProductDetails_main {
     display: grid;
+    padding: 1rem 0;
+}
+
+.ProductDetails_main > *:nth-child(1) {
+    grid-area: image;
+}
+.ProductDetails_main > *:nth-child(2) {
+    grid-area: text;
+}
+.ProductDetails_main > *:nth-child(3) {
+    grid-area: cart;
 }
 
 ._desktop .ProductDetails_main {
-    padding: 1rem 0;
     gap: 2rem;
     grid-template-areas:
         "image text cart";
     grid-template-columns: repeat(3, 1fr);
-    /* background: palegoldenrod; */
+}
+
+._tablet .ProductDetails_main,
+._mobile .ProductDetails_main {
+    grid-template-areas:
+        "text"
+        "image"
+        "cart";
+    grid-template-columns: 1fr;
+}
+@media (min-width: 790px) {
+    ._tablet .ProductDetails_main {
+        grid-template-areas:
+            "image text"
+            "cart cart";
+        grid-template-columns: repeat(2, 1fr);
+    }  
+}
+
+.ProductDetails_main_text {
+    columns: 3 16rem;
+    column-gap: 2rem;
+}
+
+.ProductDetails_main_text > p {
+    /* break-inside: avoid; */
 }
