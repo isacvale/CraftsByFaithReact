@@ -8,11 +8,19 @@ import './ProductDetails.css'
 
 const ProductDetails = observer(() => {
     const { screen } = uiStore
+    const {
+        cautionMessage,
+        description,
+        name,
+        patternMessage,
+        price,
+    } = productStore
+
     return (
         <section className={`ProductDetails _${screen}`}>
             <header>
-                <h1>{productStore.name}</h1>
-                <Money />
+                <h1>{name}</h1>
+                <Money value={price} />
             </header>
 
             <div className='ProductDetails_main'>
@@ -20,38 +28,24 @@ const ProductDetails = observer(() => {
                 <ProductImage />
 
                 <div className='ProductDetails_main_text'>
-                    {
-                        productStore.description.map((text, idx) =>
-                            <p
-                                key={idx}
-                                className='ProductDetails_description'
-                            >
-                                {text}
-                            </p>
-                        )
-                    }
-
-                    {
-                        productStore.cautionMessage.map((text, idx) =>
-                            <p
-                                key={idx}
-                                className='ProductDetails_caution'
-                            >
-                                <span>Caution: </span>{text}
-                            </p>                    
-                        )
-                    }
-
-                    {
-                        productStore.patternMessage.map((text, idx) =>
-                            <p
-                                key={idx}
-                                className='ProductDetails_pattern'
-                            >
-                                <span>Pattern: </span>{text}
-                            </p>                    
-                        )
-                    }
+                    <div
+                        className='ProductDetails_description'
+                        dangerouslySetInnerHTML={{
+                            __html: description
+                        }}
+                    />
+                    <div
+                        className='ProductDetails_caution'
+                        dangerouslySetInnerHTML={{
+                            __html: cautionMessage
+                        }}
+                    />
+                    <div
+                        className='ProductDetails_pattern'
+                        dangerouslySetInnerHTML={{
+                            __html: patternMessage
+                        }}
+                    />
                 </div>
 
                 <AddToCart />

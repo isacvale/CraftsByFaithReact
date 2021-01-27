@@ -20,7 +20,7 @@
 }
 ._active > .ProductThumbnailCanvas {
     background: var(--color-pink-LL);
-    filter: drop-shadow(0 0 0.1rem var(--color-shadow-l));  
+    filter: drop-shadow(0 0 0.1rem var(--color-shadow-ll));  
 }
 ._active > .ProductThumbnailCanvas::after {
     background: var(--color-pink-LL);

@@ -1,27 +1,67 @@
-/* .Money {
+.Money {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-copy);
+}
+.Money.secondary > * {
+    color: var(--color-pink-l);
+}
+.Money.saturated > * {
+    color: var(--color-blue-s);
+}
+.Money_currency,
+.Money_dollars,
+.Money_cents {
+    color: var(--color-primary);
+    font-weight: 900;
+}
+.Money_currency,
+.Money_dollars {
+    font-size: 2.2rem;
+    line-height: 0.8;
+}
+.Money_currency{
+    font-size: 1.2rem;
+    margin-bottom: -0.1rem;
+    margin-right: .1rem;
+    font-weight:400;
+}
+.Money_cents {
+    font-size: 1.2rem;
+    font-weight:400;
+    margin-left: 0.1rem;
+}
+.Money_free {
+    font-size: 1.4rem;
+    line-height: 0.5;
+    font-weight: 900;
+}
 
-} */
+/* .Money {
+    text-align: center;
+}
 
 .Money_currency,
 .Money_dollars,
 .Money_cents {
     letter-spacing: 0.5px;
-} 
-
-.Money_currency {
-    margin-right: 0.2rem;
+    line-height: .7;
 }
 
-.Money_currency,
-.Money_dollars,
-.Money_cents {
+.Money.secondary > * {
+    color: var(--color-pink-l);
+}
+
+.Money_currency {
+    margin-right: 0.1rem;
 }
 
 .Money_currency,
 .Money_cents {
     color: var(--color-primary);
-    font-size: 1.4rem;
-    letter-spacing: -0.5px;
+    font-size: 0.9rem;
+    letter-spacing: 0.4px;
     font-weight: 400;
 }
 
@@ -30,10 +70,10 @@
 
 .Money_dollars  {
     color: var(--color-primary);
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 900;
 }
 
 .Money_cents {
-    margin-left: 0.2rem;
-}
+    margin-left: 0rem;
+} */

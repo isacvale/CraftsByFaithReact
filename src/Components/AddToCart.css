@@ -13,6 +13,9 @@
     margin: 0 0 0.5rem;
     padding: 0;
 }
+.AddToCard_SectionTitle + input {
+    text-transform: uppercase;
+}
 
 .AddToCard_OptionList {
     display: flex;
@@ -86,6 +89,17 @@
 
 .AddToCard_Option_Stock {
     font-size: 0.8rem;
+}
+
+.AddToCard_CustomTextWrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 600ms ease-out;
+}
+.AddToCard_CustomTextWrapper.--open {
+    max-height: 1000px;
+    overflow: unset;
+    transition: max-height 600ms ease-in;
 }
 
 .AddToCard_CustomText {

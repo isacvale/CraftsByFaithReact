@@ -1,13 +1,18 @@
 .CartSummary {
     display: flex;
-    padding: 0 1rem;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
 }
-._mobile .CartSummary,
-._tablet .CartSummary {
-}
+
 ._desktop .CartSummary {
     flex-direction: column;
-    margin-top: 2rem;
+    margin: 2rem 1rem 0;
+}
+
+.CartSummaryCheckoutButton > * {
+    color: var(--color-blue-s);
+    font-family: var(--font-copy);
 }
 
 .CartSummaryProductList {
@@ -21,5 +26,60 @@
 }
 ._desktop  .CartSummaryProductList {
     flex-direction: column;
+}
+
+.CartSummaryCheckout {
     margin-top: 1rem;
 }
+._desktop .CartSummaryCheckout {
+    margin-top: 0;
+}
+
+.CartSummaryCheckoutButton {
+    align-items: center;
+    background: linear-gradient(
+        180deg,
+        white -130%,
+        var(--color-amazon) 60%
+    );
+    border: none;
+    border-radius: var(--b-radius);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    justify-content: center;
+    padding:
+        calc(0.8 * var(--b-radius))
+        calc(2 * var(--b-radius)) 
+        calc(2 * var(--b-radius));
+    padding:
+        1rem 0.6rem;
+    width: 100%;
+}
+
+.CartSummaryCheckout ._title,
+.CartSummaryCheckout ._subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    line-height: 0.9;
+    margin-top: 0.3rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.CartSummaryCheckoutButtonLabel {
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+/* .CartSummaryCheckoutButton > img {
+    display: block;
+    height: 2.2rem;
+    margin: 0.3rem auto;
+    filter: brightness(300%);
+    filter: brightness(300%) drop-shadow(0 2px 2px var(--color-shadow-ll));
+} */

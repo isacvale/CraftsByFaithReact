@@ -14,6 +14,7 @@
   --color-pink: hsla(351, 45%, 66%, 1);
   --color-pink-L: hsla(351, 55%, 80%, 1);
   --color-pink-LL: hsla(351, 55%, 92%, 1);
+  --color-pink-l: hsla(351, 45%, 46%, 1);
   --color-beige: hsla(55, 21%, 78%, 1);
   --color-beige-l: hsla(55, 21%, 63%, 1);
   --color-offwhite: hsl(60, 14%, 97%);
@@ -21,6 +22,7 @@
   --color-dark: hsla(205, 18%, 10%);
   --color-dark-L: hsla(205, 18%, 30%);
   --color-yellow: #e8df7a;
+  --color-amazon: hsl(43, 85%, 62%);
 
   --color-primary: var(--color-blue);
   --color-secondary: var(--color-pink);
