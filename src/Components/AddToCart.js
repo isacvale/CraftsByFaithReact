@@ -4,7 +4,12 @@ import { productStore } from 'Stores'
 import './AddToCart.css'
 
 const AddToCardOption = observer(props => {
-    const { code='custom', custom, label, stock = 0 } = props
+    const {
+        code = 'custom',
+        custom,
+        label,
+        stock = 0,
+    } = props
 
     const isChecked = (code === productStore.selectedVariation)
 
@@ -13,7 +18,7 @@ const AddToCardOption = observer(props => {
     }
 
     return (
-        <div className='AddToCard_Option'>
+        <div className={`AddToCard_Option`}>
             <label>
                 <input
                     type='radio'
@@ -34,9 +39,16 @@ const AddToCardOption = observer(props => {
 })
 
 const AddToCardButton = props => {
-    const { children: label } = props
+    const {
+        children: label,
+        danger,
+        primary,
+    } = props
+
+    const typeClass = primary ? '_primary' : danger ? '_danger' : '_common'
+
     return (
-        <div className='AddToCardButton_Container'>
+        <div className={`AddToCardButton_Container ${typeClass}`}>
             <button
                 className='AddToCardButton interactive-l'
             >
@@ -45,29 +57,6 @@ const AddToCardButton = props => {
         </div>
     )
 }
-
-
-// //  qwerty
-// const CustomDescription = observer((props) => {
-//     const { selectedVariation } = productStore
-
-//     const isCustom = (selectedVariation === 'custom')
-
-//     const [showCustom, setShowCustom] = useState(selectedVariation === 'custom')
-//     const isOpen = useTransition(isCustom, () => setShowCustom(false), 2000)
-
-//     if (!showCustom) return null
-//     return (
-//         // <label className={isOpen}>
-//         //     <span className='AddToCard_SectionTitle'>Choose embroidered initials</span>
-//         //     <input type='text' className='interactive textInput' />
-//         // </label>
-//         <label data-isopen={isOpen}>
-//             <span className='AddToCard_SectionTitle'>Please detail your request</span>
-//             <textarea className='AddToCard_CustomText interactive textInput' />
-//         </label>
-//     )
-// })
 
 const AddToCart = observer(() => {
     const {
@@ -137,9 +126,9 @@ const AddToCart = observer(() => {
             </section>
 
             <section className='AddToCard_Buttons'>
-                <AddToCardButton>Add to cart</AddToCardButton>
-                <AddToCardButton>Add another to cart</AddToCardButton>
-                <AddToCardButton>Remove from cart</AddToCardButton>                
+                <AddToCardButton primary>Add one more</AddToCardButton>
+                <AddToCardButton>Testing secondary button</AddToCardButton>
+                <AddToCardButton danger>Remove from cart</AddToCardButton>                
             </section>
         </form>
     )

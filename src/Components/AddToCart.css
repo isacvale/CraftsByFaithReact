@@ -119,28 +119,41 @@
     flex-direction: column;
 }
 
+.AddToCardButton_Container {
+    border-radius: var(--b-radius);
+    margin: 0.3rem 0;
+}
+._primary.AddToCardButton_Container {
+    box-shadow: 0 0.05rem 0.2rem 0.1rem var(--color-shadow-L);
+}
+
 .AddToCardButton {
-    background: var(--color-yellow);
+    border: none;
+    border-radius: var(--b-radius);
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    width: 100%;
+}
+._common > .AddToCardButton {
+    background: white;
+    color: var(--color-blue);
+    padding: 0.2rem;
+}
+._primary > .AddToCardButton {
     background: linear-gradient(
         180deg,
         white -130%,
         var(--color-yellow) 60%
     );
-    border: none;
-    border-radius: var(--b-radius);
     color: var(--color-blue-s);
-    cursor: pointer;
-    display: block;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    /* margin: 0.3rem; */
     padding: var(--b-radius);
-    text-transform: uppercase;
-    width: 100%;
+}
+._danger > .AddToCardButton {
+    background: white;
+    color: var(--color-pink);
+    padding: 0.2rem;
 }
 
-.AddToCardButton_Container {
-    border-radius: var(--b-radius);
-    box-shadow: 0 0.05rem 0.2rem 0.1rem var(--color-shadow-L);
-    margin: 0.3rem 0;
-}
