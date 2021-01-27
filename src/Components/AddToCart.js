@@ -11,10 +11,10 @@ const AddToCardOption = observer(props => {
         stock = 0,
     } = props
 
-    const isChecked = (code === productStore.selectedVariation)
+    const isChecked = (code === productStore.variationCode)
 
     const onChange = () => {
-        productStore.setValue('selectedVariation', code)
+        productStore.setValue('variationCode', code)
     }
 
     return (
@@ -42,6 +42,7 @@ const AddToCardButton = props => {
     const {
         children: label,
         danger,
+        disabled,
         primary,
     } = props
 
@@ -50,7 +51,8 @@ const AddToCardButton = props => {
     return (
         <div className={`AddToCardButton_Container ${typeClass}`}>
             <button
-                className='AddToCardButton interactive-l'
+                className={`AddToCardButton interactive${primary ? '-l' : ''}`}
+                disabled={disabled ? true : null}
             >
                 {label}
             </button>
@@ -63,11 +65,14 @@ const AddToCart = observer(() => {
         allowCustom,
         customInitials,
         customMessage,
-        selectedVariation,
+        isChanged,
+        variationCode,
         setValue,
         variations,
     } = productStore
-    const isCustom = (selectedVariation === 'custom')
+    const isCustom = (variationCode === 'custom')
+
+    const disabledSave = !isChanged
 
     return (
         <form className='AddToCard'>
@@ -126,8 +131,11 @@ const AddToCart = observer(() => {
             </section>
 
             <section className='AddToCard_Buttons'>
-                <AddToCardButton primary>Add one more</AddToCardButton>
-                <AddToCardButton>Testing secondary button</AddToCardButton>
+                <AddToCardButton
+                    primary
+                    disabled={disabledSave}
+                >Save change</AddToCardButton>
+                <AddToCardButton>Add one more</AddToCardButton>
                 <AddToCardButton danger>Remove from cart</AddToCardButton>                
             </section>
         </form>

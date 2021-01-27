@@ -58,7 +58,7 @@
 
 .ProductDetails_main {
     display: grid;
-    padding: 1rem 0;
+    padding: 1rem 0 0;
 }
 
 .ProductDetails_main > *:nth-child(1) {

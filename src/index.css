@@ -21,7 +21,8 @@
   --color-grey: hsl(60, 14%, 47%);
   --color-dark: hsla(205, 18%, 10%);
   --color-dark-L: hsla(205, 18%, 30%);
-  --color-yellow: #e8df7a;
+  --color-yellow: hsla(55, 71%, 69%, 1);
+  --color-yellow-s:hsla(55, 13%, 69%, 1);
   --color-amazon: hsl(43, 85%, 62%);
 
   --color-primary: var(--color-blue);
@@ -80,16 +81,21 @@ body {
 .interactive-l {
   transition: box-shadow 0.4s;
 }
-.interactive:hover,
-.interactive:focus{
+.interactive:hover:enabled,
+.interactive:focus {
   box-shadow: 0 0 0 3px var(--color-tertiary);
   outline: none;
 }
-.interactive-l:hover,
+.interactive-l:hover:enabled,
 .interactive-l:focus {
   box-shadow: 0 0 0 3px var(--color-beige-l);
   outline: none;
 }
+.interactive:hover:enabled,
+.interactive-l:hover:enabled {
+  cursor: pointer;
+}
+
 
 .dropcap:first-of-type:first-letter {
   background: var(--color-beige);

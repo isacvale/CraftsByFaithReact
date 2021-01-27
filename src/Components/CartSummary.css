@@ -40,8 +40,15 @@
     background: linear-gradient(
         180deg,
         white -130%,
-        var(--color-amazon) 60%
+        var(--color-yellow) 60%
     );
+    background: linear-gradient(
+        180deg,
+        white 10%,
+        hsl(0, 0%, 98%) 30%,
+        hsl(0, 0%, 82%) 120%
+    );
+    box-shadow: 0 0 3px 1px var(--color-shadow);
     border: none;
     border-radius: var(--b-radius);
     cursor: pointer;
@@ -55,7 +62,13 @@
         calc(2 * var(--b-radius));
     padding:
         1rem 0.6rem;
+    position: relative;
     width: 100%;
+}
+
+.zCartSummaryCheckoutButton * {
+    border-color: white !important;
+    color: white !important;
 }
 
 .CartSummaryCheckout ._title,
@@ -70,11 +83,18 @@
 
 .CartSummaryCheckoutButtonLabel {
     font-size: 0.9rem;
-    font-weight: 900;
+    font-weight: 600;
     letter-spacing: 0.2px;
     line-height: 1;
     text-transform: uppercase;
 }
+.CartSummary_Divider {
+    border-top: 1px solid var(--color-shadow);
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.3);
+    margin: 0.4rem auto;
+    width: 80%;
+}
+
 
 /* .CartSummaryCheckoutButton > img {
     display: block;
@@ -83,3 +103,35 @@
     filter: brightness(300%);
     filter: brightness(300%) drop-shadow(0 2px 2px var(--color-shadow-ll));
 } */
+
+.CartSummary_Icon {
+    height: 3rem;
+    position: relative;
+}
+
+.CartSummary_Icon::after {
+    content: '';
+    border-bottom: 2px solid blue;
+    width: calc(100% - 3rem);
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+.CartSummary_IconWrapper {
+    /* position: relative; */
+}
+.CartSummary_IconWrapper::before,
+.CartSummary_IconWrapper::after {
+    content: '';
+    border-bottom: 2px solid var(--color-shadow);
+    width: calc(50% - 2rem);
+    position: absolute;
+    top: 46%;
+}
+.CartSummary_IconWrapper::before {
+    left: 0.3rem;
+
+}
+.CartSummary_IconWrapper::after {
+    right: 0.3rem;
+}

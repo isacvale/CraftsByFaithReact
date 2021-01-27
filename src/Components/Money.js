@@ -11,7 +11,7 @@ const getDollarsAndCents = (value='0.00') => {
 }
 
 const Money = props => {
-    const { color, value } = props
+    const { color, small, value } = props
     const { dollars, cents} = getDollarsAndCents(value)
 
     if (!value)
@@ -22,7 +22,7 @@ const Money = props => {
         )
 
     return (
-        <div className={`Money ${color || ''}`}>
+        <div className={`Money ${color || ''} ${small ? '_small' : ''}`}>
             <span className='Money_currency'>$</span>
             <span className='Money_dollars'>{dollars}</span>
             <span className='Money_cents'>{cents}</span>

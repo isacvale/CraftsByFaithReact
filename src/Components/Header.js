@@ -78,9 +78,6 @@ const MenuRoundButton = observer(() => {
 
 const UnderMenuCategory = observer(props => {
     const { screen } = uiStore
-    // const categoryLabel = props.smallLabel
-    //     ? 'category'
-    //     : 'choose a category'
     const categoryLabel = 'category'
 
     return (

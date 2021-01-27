@@ -21,6 +21,12 @@
     font-size: 2.2rem;
     line-height: 0.8;
 }
+._small > .Money_currency,
+._small > .Money_dollars {
+    font-size: 1.4rem;
+    line-height: 0.8;
+    font-weight: 600;
+}
 .Money_currency{
     font-size: 1.2rem;
     margin-bottom: -0.1rem;
@@ -31,6 +37,9 @@
     font-size: 1.2rem;
     font-weight:400;
     margin-left: 0.1rem;
+}
+._small > .Money_cents {
+    font-size: 0.9rem;
 }
 .Money_free {
     font-size: 1.4rem;

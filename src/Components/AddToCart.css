@@ -130,7 +130,7 @@
 .AddToCardButton {
     border: none;
     border-radius: var(--b-radius);
-    cursor: pointer;
+    /* cursor: pointer; */
     display: block;
     font-weight: 600;
     letter-spacing: 0.2px;
@@ -157,3 +157,16 @@
     padding: 0.2rem;
 }
 
+
+._common > .AddToCardButton:disabled,
+._danger > .AddToCardButton:disabled {    
+    color: var(--color-shadow-l);
+}
+._primary > .AddToCardButton:disabled {
+    background: linear-gradient(
+        180deg,
+        white -80%,
+        var(--color-yellow-s) 120%
+    );
+    color: var(--color-shadow-l);
+}

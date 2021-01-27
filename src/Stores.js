@@ -10,7 +10,40 @@ const mainStore = observable({
     hereGoMethods: action
 })
 
+const cartStore = observable({
+    items: [
+        {
+            code: '01',
+            price: 35,
+            typeCode: 'AN',
+            variationCode: 'custom',
+            image: 'Blue Elephant.jpg',
+            customMessage: 'This is custom message 1.',
+            customInitials: 'SD',
+        },
+        {
+            code: '01',
+            price: 35,
+            typeCode: 'AN',
+            variationCode: '02',
+            image: 'Blue Elephant.jpg',
+            customMessage: '',
+            customInitials: 'VD',
+        },
+        {
+            code: '01',
+            price: 35,
+            typeCode: 'AN',
+            variationCode: '03',
+            image: 'Blue Elephant.jpg',
+            customMessage: 'This is custom message 2.',
+            customInitials: '',
+        },
+    ],
+})
+
 const productStore = observable({
+    index: 0,
     name: 'Hugabble Elephant',
     price: 35,
     code: '01',
@@ -42,14 +75,42 @@ const productStore = observable({
         }
     ],
     allowCustom: true,
-    selectedVariation: '01',
-    customMessage: '',
-    customInitials: '',
+    variationCode: 'custom',
+    customMessage: 'This is custom message 1.',
+    customInitials: 'SD',
     setValue: function (prop, value) {
         this[prop] = value
-    }
+    },
+    // TODO load from REST
+    loadProduct: function (index) {
+        const {
+            code,
+            price,
+            typeCode,
+            variationCode,
+            image,
+            customMessage,
+            customInitials,
+        } = cartStore.items[index]
+
+        this.index = index
+        this.code = code
+        this.price = price
+        this.typeCode = typeCode
+        this.variationCode = variationCode
+        this.image = image
+        this.customMessage = customMessage
+        this.customInitials = customInitials
+    },
+    get isChanged () {
+        const itemIncart = cartStore.items[this.index]
+        const change = ['variationCode', 'customMessage', 'customInitials']
+            .find(prop => (this[prop] !== itemIncart[prop]))
+        return !!change
+    },
 }, {
-    setValue: action.bound
+    setValue: action.bound,
+    loadProduct: action.bound,
 })
 
 const uiStore = observable({
@@ -75,13 +136,14 @@ const uiStore = observable({
     },
 }, {
     setValue: action.bound,
-    updateScreen: action.bound
+    updateScreen: action.bound,
 })
 
 uiStore.updateScreen()
 window.addEventListener('resize', uiStore.updateScreen)
 
 export {
+    cartStore,
     mainStore,
     productStore,
     uiStore
