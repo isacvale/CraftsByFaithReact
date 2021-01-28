@@ -103,6 +103,15 @@
     /* transition: max-height 600ms ease-in; */
 }
 
+._tablet .AddToCard_CustomTextWrapper,
+._desktop .AddToCard_CustomTextWrapper {
+    transition: max-height 600ms ease-out;
+}
+._tablet .AddToCard_CustomTextWrapper.--open,
+._desktop .AddToCard_CustomTextWrapper.--open {
+    transition: max-height 600ms ease-in;
+}
+
 .AddToCard_CustomText {
     display: block;
     margin: 0.5rem 0 0;
