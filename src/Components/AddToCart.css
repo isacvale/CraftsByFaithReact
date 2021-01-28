@@ -94,8 +94,8 @@
 .AddToCard_CustomTextWrapper {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 600ms ease-out;
-    will-change: max-height;
+    /* transition: max-height 600ms ease-out; */
+    /* will-change: max-height; */
 }
 .AddToCard_CustomTextWrapper.--open {
     max-height: 1000px;
