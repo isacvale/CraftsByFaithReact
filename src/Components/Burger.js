@@ -6,8 +6,9 @@ import { uiStore } from 'Stores'
 import './Burger.css'
 
 const Burger = observer(() => {
-    const { isMenuButtonOpen, width } = uiStore
-    const burgerClasses = `hamburger hamburger--collapse ${isMenuButtonOpen ? 'is-active' : ''}`
+    const { width } = uiStore
+    // const { isMenuButtonOpen, width } = uiStore
+    // const burgerClasses = `hamburger hamburger--collapse ${isMenuButtonOpen ? 'is-active' : ''}`
     const scale = Math.min(0.6, 0.5 + 0.1 * width / 480)
 
     return(
