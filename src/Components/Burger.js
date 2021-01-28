@@ -12,7 +12,7 @@ const Burger = observer(() => {
 
     return(
         <div
-            className={burgerClasses}
+            // className={burgerClasses}
             style={{
                 // padding: '0 0 0 2px',
                 transform: `scale(${scale})`
