@@ -222,6 +222,7 @@
     padding: 0 25%;
     overflow: hidden;
     transition: max-height 0.4s, padding 0.4s;
+    will-change: max-height, padding;
 }
 
 .HeaderNavSelect.--open {
