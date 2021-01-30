@@ -9,7 +9,7 @@ import {
 import Burger from './Burger'
 
 import FaithLogo from './FaithLogo'
-import { mainStore, uiStore } from 'Stores.js'
+import { uiStore } from 'Stores.js'
 
 import './Header.css'
 import iconMail from 'Assets/icon_mail.svg'
