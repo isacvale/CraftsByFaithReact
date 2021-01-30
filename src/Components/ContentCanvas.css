@@ -1,0 +1,19 @@
+.ContentCanvas {
+    background: white;
+    box-shadow: 0 0 0.4rem 0.4rem hsla(0, 0%, 0%, 0.05);
+    margin: 2rem 0 0;
+    padding: 2rem;
+    position: relative;
+}
+
+.ContentCanvas::after {
+    border: 2px dashed var(--color-accent);
+    box-sizing: border-box;
+    content: '';
+    height: calc(100% - 1rem);
+    left: 0.5rem;
+    pointer-events: none;
+    position: absolute;
+    width: calc(100% - 1rem);
+    top: 0.5rem;
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import {
-    Link
+    Link,
+    useLocation,
 } from 'react-router-dom'
 import {
     observer
@@ -15,13 +16,15 @@ import iconMail from 'Assets/icon_mail.svg'
 import iconFacebook from 'Assets/icon_facebook.svg'
 import iconTwitter from 'Assets/icon_twitter.svg'
 
-const MainNavLink = observer(props => {
-    const { page } = mainStore
+const MainNavLink = props => {
+    const location = useLocation()
+    const { pathname } = location
     const { label, to } = props
-    return to === page
+
+    return to === pathname.replace('/', '')
         ? <div className="_selected">{label}</div>
         : <Link to={`/${to}`}>{label}</Link>
-})
+}
 
 const DesktopMenu = () =>
 <>

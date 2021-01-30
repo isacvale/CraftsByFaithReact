@@ -8,6 +8,7 @@ import {
 import ProductsPage from 'Pages/Products'
 import AboutUsPage from 'Pages/AboutUs'
 import GalleryPage from 'Pages/Gallery'
+import HomePage from 'Pages/Home'
 
 const App = () => {  
   return (
@@ -21,8 +22,12 @@ const App = () => {
             <GalleryPage />
           </Route>
 
-          <Route path='/'>
+          <Route path='/products'>
               <ProductsPage />
+          </Route>
+
+          <Route path='/'>
+              <HomePage />
           </Route>
         </Switch>
       </Router>

@@ -1,0 +1,78 @@
+.HomeHero {
+    align-items: center;
+    display: grid;
+    font-size: 0.8rem;
+    /* grid-template-columns: repeat(2, minmax(0, 30em)); */
+    /* grid-template-columns: 7fr 3fr; */
+    grid-template-columns: 5fr minmax(0, 3fr);
+    margin: 1em auto -3rem;
+    overflow: hidden;
+    position: relative;
+    width: fit-content;
+    width: 100%;
+    z-index: 1;
+}
+._tablet .HomeHero,
+._desktop .HomeHero{
+    font-size: 0.85rem;
+    gap: 1em;
+    grid-template-columns: repeat(2, minmax(0, 30em));
+    margin: 0 auto -3rem;
+    width: fit-content;
+}
+._desktop .HomeHero{
+    font-size: 1rem;
+    gap: 2em;
+}
+
+.HomeHero_Greeting {
+    color: var(--color-primary);
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-size: 4em;
+    line-height: 1;
+    margin: 0;
+    text-align: right;
+}
+._tablet .HomeHero_Greeting,
+._desktop .HomeHero_Greeting {
+    font-size: 6em;
+    margin: 0.4em 0 0;
+}
+
+.HomeHero_SubHeading,
+.HomeHero_Intro {
+    font-size: 1.2em;
+    margin: 0.4em 0;
+    text-align: right;
+}
+
+.HomeHero_SubHeading {
+    color: var(--color-blue-l);
+    font-weight: 900;
+    
+}
+
+.HomeHero_SubHeading > span {
+    break-inside: avoid;
+    display: inline-block;
+}
+.HomeHero_SubHeading em {
+    break-inside: avoid;
+    font-style: normal;
+    color: var(--color-secondary);
+}
+
+.HomeHero_Intro {
+    font-weight: 400;
+}
+
+.HomeHero_Image {
+    height: 14em;
+    margin: 2em 0 0;
+}
+._tablet .HomeHero_Image,
+._desktop .HomeHero_Image {
+    height: 20em;
+    margin: 2em 0 0;
+}

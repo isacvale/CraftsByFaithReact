@@ -7,7 +7,6 @@ import { mainStore } from 'Stores.js'
 import './ProductsPage.css'
 
 const ProductsPage = () => {
-    mainStore.page = 'products'
     return (
         <SiteCanvas>
             <Header />

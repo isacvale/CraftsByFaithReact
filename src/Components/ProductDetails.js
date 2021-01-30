@@ -3,11 +3,11 @@ import { observer } from 'mobx-react-lite'
 import AddToCart from 'Components/AddToCart'
 import Money from 'Components/Money'
 import ProductImage from 'Components/ProductImage'
-import { productStore, uiStore } from 'Stores'
+import ContentCanvas from 'Components/ContentCanvas'
+import { productStore } from 'Stores'
 import './ProductDetails.css'
 
 const ProductDetails = observer(() => {
-    const { screen } = uiStore
     const {
         cautionMessage,
         description,
@@ -17,8 +17,8 @@ const ProductDetails = observer(() => {
     } = productStore
 
     return (
-        <section className={`ProductDetails _${screen}`}>
-            <header>
+        <ContentCanvas>
+            <header className='ProductDetailsHeader'>
                 <h1>{name}</h1>
                 <Money value={price} />
             </header>
@@ -50,8 +50,7 @@ const ProductDetails = observer(() => {
 
                 <AddToCart />
             </div>
-
-        </section>
+        </ContentCanvas>
     )
 })
 

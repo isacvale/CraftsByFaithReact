@@ -5,9 +5,11 @@ import {
 
 const mainStore = observable({
     page: '',
-    hereGoMethods: () => {},
+    setValue: function (prop, value) {
+        this[prop] = value
+    },
 }, {
-    hereGoMethods: action
+    setValue: action.bound
 })
 
 const cartStore = observable({
