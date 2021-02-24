@@ -1,0 +1,7 @@
+.HomePageButtonWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+    padding: 3rem 3rem 5rem;
+}

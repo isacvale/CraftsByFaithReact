@@ -9,6 +9,7 @@ import ProductsPage from 'Pages/Products'
 import AboutUsPage from 'Pages/AboutUs'
 import GalleryPage from 'Pages/Gallery'
 import HomePage from 'Pages/Home'
+import ProductList from 'Pages/ProductList'
 
 const App = () => {  
   return (
@@ -23,12 +24,17 @@ const App = () => {
           </Route>
 
           <Route path='/products'>
-              <ProductsPage />
+            <ProductsPage />
+          </Route>
+
+          <Route path='/category/:alias'>
+            <ProductList />
           </Route>
 
           <Route path='/'>
-              <HomePage />
+            <HomePage />
           </Route>
+          
         </Switch>
       </Router>
   );

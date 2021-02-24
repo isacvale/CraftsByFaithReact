@@ -5,10 +5,13 @@ import './ContentCanvas.css'
 
 const ContentCanvas = observer(props => {
     const { screen } = uiStore
+    const { children, stripped } = props
+
+    const classes = `ContentCanvas ${screen} ${stripped ? '_stripped' : ''}`
     
     return (
-        <section className={`ContentCanvas ${screen}`}>
-            {props.children}
+        <section className={classes}>
+            {children}
         </section>
     )
 })

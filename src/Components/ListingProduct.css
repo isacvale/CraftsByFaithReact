@@ -1,0 +1,96 @@
+.ListingProduct {
+    --border-size: 1.6rem;
+    display: grid;
+    grid-template-columns: var(--border-size) auto var(--border-size);
+    grid-template-rows: auto auto var(--border-size);
+    transition: transform 0.4s, box-shadow 0.6s;
+}
+
+.ListingProduct:focus-within,
+.ListingProduct:hover {
+    box-shadow:
+        0 0 4rem -1rem var(--color-shadow-l),
+        0 0 0.5rem 0 var(--color-shadow-ll)
+    ;
+    transform: scale(1.006);
+    z-index: 2;
+}
+.ListingProduct:hover::before,
+.ListingProduct:hover::after {
+    border: none;
+}
+
+.ListingProduct > img {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+}
+
+.ListingProduct > div {
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(3, auto);
+    grid-column: 2;
+    grid-row: 2;
+    padding: 0.5rem;
+}
+
+.ListingProduct_name,
+.ListingProduct_price,
+.ListingProduct_show,
+.ListingProduct_add {
+    color: var(--color-primary);
+}
+
+.ListingProduct_name,
+.ListingProduct_price {
+    font-size: 1.3rem;
+}
+
+.ListingProduct_name {
+    align-self: center;
+    font-family: var(--font-title);
+    font-weight: 400;
+    grid-column: 1;
+    grid-row: 1 / -1;
+    margin: 0;
+}
+
+.ListingProduct_price,
+.ListingProduct_show,
+.ListingProduct_add {
+    text-align: right;
+}
+
+.ListingProduct_price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0.3rem 0;
+}
+.ListingProduct_price::before {
+    content: '$';
+}
+
+.ListingProduct_show,
+.ListingProduct_add {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-copy);
+    grid-column: 2;
+    line-height:110%;
+    padding: 0;
+    text-transform: lowercase;
+}
+
+.ListingProduct_show {
+    grid-row: 2;
+}
+.ListingProduct_add {
+    grid-row: 3;
+}

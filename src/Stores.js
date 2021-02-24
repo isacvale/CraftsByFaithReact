@@ -5,6 +5,20 @@ import {
 
 const mainStore = observable({
     page: '',
+    categories: [
+        {
+            name: 'animals',
+            label: 'Animals',
+            to: '/list/animals',
+            thumbnail: 'stock_plush.png',
+        },
+        {
+            name: 'snuggies',
+            label: 'Snuggies',
+            to: '/list/snuggies',
+            thumbnail: 'stock_dedo.png',
+        },
+    ],
     setValue: function (prop, value) {
         this[prop] = value
     },
@@ -141,12 +155,112 @@ const uiStore = observable({
     updateScreen: action.bound,
 })
 
+const display = [
+    {
+        alias: '01AA99',
+        name: 'Huggable Elephant',
+        price: 37,
+        discount: 29,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+    {
+        alias: '02BB99',
+        name: 'Unhuggable Hippo',
+        price: 49,
+        discount: 48,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+    {
+        alias: '01AA99s',
+        name: 'Huggable Elephant',
+        price: 37,
+        discount: 29,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+    {
+        alias: '02BB99s',
+        name: 'Unhuggable Hippo',
+        price: 49,
+        discount: 48,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+    {
+        alias: '01AA99x',
+        name: 'Huggable Elephant',
+        price: 37,
+        discount: 29,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+    {
+        alias: '02BB99x',
+        name: 'Unhuggable Hippo',
+        price: 49,
+        discount: 48,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+    {
+        alias: '01AA99d',
+        name: 'Huggable Elephant',
+        price: 37,
+        discount: 29,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+    {
+        alias: '02BB99d',
+        name: 'Unhuggable Hippo',
+        price: 49,
+        discount: 48,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+    {
+        alias: '01AA99t',
+        name: 'Huggable Elephant',
+        price: 37,
+        discount: 29,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+    {
+        alias: '02BB99t',
+        name: 'Unhuggable Hippo',
+        price: 49,
+        discount: 48,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+    {
+        alias: '01AA99p',
+        name: 'Huggable Elephant',
+        price: 37,
+        discount: 29,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+    {
+        alias: '02BB99tp',
+        name: 'Unhuggable Hippo',
+        price: 49,
+        discount: 48,
+        image: 'https://picsum.photos/600/600',
+        link: 'www.ocastudios.com'
+    },
+]
+
 uiStore.updateScreen()
 window.addEventListener('resize', uiStore.updateScreen)
 
 export {
     cartStore,
+    display,
     mainStore,
     productStore,
-    uiStore
+    uiStore,
 }

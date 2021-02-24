@@ -17,3 +17,10 @@
     width: calc(100% - 1rem);
     top: 0.5rem;
 }
+
+.ContentCanvas._stripped {
+    padding: 0;
+}
+/* .ContentCanvas._stripped::after {
+    display: none;
+} */
