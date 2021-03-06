@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import { uiStore } from 'Stores.js'
@@ -7,10 +7,9 @@ import BurgerButton from 'Components/BurgerButton'
 import Icon from 'Components/Icon'
 import { useAnimationConfirm } from 'Utils'
 import './HeaderThin.css'
-import { set } from 'mobx'
 
 const NavLink = props => {
-    const { children, selected, to } = props
+    const { children, to } = props
     return (
         <Link to={to} className='HeaderThin_NavLink interactive'>
             {children}

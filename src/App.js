@@ -6,10 +6,10 @@ import {
   // Link,
 } from 'react-router-dom'
 import ProductsPage from 'Pages/Products'
-import AboutUsPage from 'Pages/AboutUs'
-import GalleryPage from 'Pages/Gallery'
-import HomePage from 'Pages/Home'
 import ProductList from 'Pages/ProductList'
+// import AboutUsPage from 'Pages/AboutUs'
+// import GalleryPage from 'Pages/Gallery'
+// import HomePage from 'Pages/Home'
 
 const App = () => {  
   return (

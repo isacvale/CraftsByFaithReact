@@ -15,6 +15,7 @@ const CategoryButtons = props => {
             <img
                 className='CategoryButton_Image'
                 src={`${process.env.PUBLIC_URL}/images/${category.thumbnail}`}
+                alt=''
             />
             <div className='CategoryButton_Label'>
                 { category.label }

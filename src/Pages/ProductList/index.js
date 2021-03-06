@@ -1,7 +1,4 @@
 import React from 'react'
-import {
-    useParams
-} from 'react-router-dom'
 import Header from 'Components/HeaderThin'
 import SiteCanvas from 'Components/SiteCanvas'
 import ContentCanvas from 'Components/ContentCanvas'
@@ -10,8 +7,6 @@ import CartSummary from 'Components/CartSummary'
 import './ProductList.css'
 
 const ProductList = () => {
-    const { alias } = useParams()
-    console.log('--->', useParams())
 
     return (
         <SiteCanvas>

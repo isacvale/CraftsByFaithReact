@@ -120,9 +120,7 @@
     top: 50%;
     left: 0;
 }
-.CartSummary_IconWrapper {
-    /* position: relative; */
-}
+
 .CartSummary_IconWrapper::before,
 .CartSummary_IconWrapper::after {
     content: '';

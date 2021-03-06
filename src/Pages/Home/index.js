@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from 'Components/Header'
 import HeaderThin from 'Components/HeaderThin'
 import SiteCanvas from 'Components/SiteCanvas'
 import ContentCanvas from 'Components/ContentCanvas'

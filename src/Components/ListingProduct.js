@@ -4,9 +4,7 @@ import './ListingProduct.css'
 const ListingProduct = props => {
     const {
         alias,
-        discount,
         image,
-        link,
         name,
         price,
     } = props.item

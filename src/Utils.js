@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const setDebounce = (delay, callback, ...args) => {
     let hash = Math.random()
@@ -21,8 +21,7 @@ const useAnimationConfirm = (prop, delay = 600) => {
         !!prop
             ? requestAnimationFrame(() => setConfirm(1))
             : setTimeout(() => !!prop || setConfirm(false), delay)
-    }, [prop])
-    
+    }, [delay, prop])
 
     return +prop + confirm - 1
 }
