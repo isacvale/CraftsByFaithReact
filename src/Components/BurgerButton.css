@@ -1,0 +1,44 @@
+
+.BurgerButton {
+    --btn-size: 3.4rem;
+    align-items: center;
+    border: none;
+    border-radius: 100%;
+    box-shadow: 0 2px 4px 2px var(--color-shadow);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: box-shadow 0.4s;
+    height: var(--btn-size);
+    width: var(--btn-size);
+}
+.BurgerButton.mobile {
+    background-color: var(--color-tertiary);
+    /* right: 1rem; */
+}
+.BurgerButton.mobile:focus,
+.BurgerButton.mobile:hover {
+    box-shadow: 0 0px 0px 3px var(--color-blue-la);
+}
+.BurgerButton.tablet {
+    background-color: white;
+    right: 0;
+}
+
+.BurgerButton::after {
+    --inner-size: calc(var(--btn-size) - 12px);
+    border: 2px dashed var(--color-accent-L);
+    border-radius: 100%;
+    content: '';
+    height: var(--inner-size);
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    width: var(--inner-size);
+}
+._tablet > .BurgerButton {
+    top: 1rem;
+}
+._min .BurgerButton {
+    background: white;
+}

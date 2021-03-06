@@ -1,13 +1,21 @@
 .CartSummary {
-    display: flex;
-    padding: 0;
-    justify-content: space-between;
     align-items: center;
+    background: hsla(0, 0%, 100%, 0.96);
+    box-shadow: 0 0 0.6rem 0 var(--color-shadow-l);
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
 }
 
 ._desktop .CartSummary {
+    background: transparent;
+    box-shadow: none;
     flex-direction: column;
-    margin: 2rem 1rem 0;
+    margin: 2rem var(--canvas-margin) 0 1rem;
+    position: relative;
 }
 
 .CartSummaryCheckoutButton > * {
@@ -22,14 +30,14 @@
 ._mobile .CartSummaryProductList,
 ._tablet .CartSummaryProductList {
     margin: 0 1rem;
-    padding-top: 1rem;
+    padding: 1rem 0 0.5rem;
 }
 ._desktop  .CartSummaryProductList {
     flex-direction: column;
 }
 
 .CartSummaryCheckout {
-    margin-top: 1rem;
+    margin: 1rem;
 }
 ._desktop .CartSummaryCheckout {
     margin-top: 0;
@@ -64,11 +72,6 @@
         1rem 0.6rem;
     position: relative;
     width: 100%;
-}
-
-.zCartSummaryCheckoutButton * {
-    border-color: white !important;
-    color: white !important;
 }
 
 .CartSummaryCheckout ._title,

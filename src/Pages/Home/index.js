@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from 'Components/Header'
+import HeaderThin from 'Components/HeaderThin'
 import SiteCanvas from 'Components/SiteCanvas'
 import ContentCanvas from 'Components/ContentCanvas'
 import HomeHero from 'Components/HomeHero'
@@ -19,7 +20,7 @@ const HomePage = () => {
     const { categories } = mainStore
     return (
         <SiteCanvas>
-            <Header />
+            <HeaderThin />
             <main className='HomePageMain'>
                 <HomeHero />
                     <ContentCanvas>

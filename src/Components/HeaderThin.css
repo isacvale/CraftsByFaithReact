@@ -1,0 +1,101 @@
+.HeaderThin {
+    background: white;
+    border-bottom: 0 dashed transparent;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--canvas-margin);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: all 0.6s;
+}
+.HeaderThin:not(._mobile) {
+    border-bottom: 2px dashed var(--color-accent);
+    padding: 1rem var(--canvas-margin);
+}
+.HeaderThin._min {
+    background: hsla(0, 0%, 100%, 0.96);
+    border-bottom: 2px dashed var(--color-accent);
+    /* backdrop-filter: blur(2px); */
+    box-shadow: 0.3rem 0 0.6rem 0 var(--color-shadow-l);
+    padding: 0.3rem var(--canvas-margin);
+}
+
+.HeaderThin_link-wrapper {
+    display: inline-block;
+    text-decoration: none;
+}
+._mobile > .HeaderThin_link-wrapper {
+    width: 100%;
+}
+
+.HeaderThin_options {
+    align-items: center;
+    color: var(--color-primary);
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.2rem;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+.HeaderThin_options > nav,
+.HeaderThin_login {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+.HeaderThin_login {
+    gap: 0.2rem;
+}
+
+.HeaderThin_options a {
+    font-size: 1.2rem;
+}
+
+.HeaderThin_NavLink,
+.HeaderThin_NavLink > * {
+    border-radius: 1rem;
+    color: var(--color-primary);
+    font-family: var(--font-copy);
+    /* font-size: 1.2rem; */
+    text-decoration: none;
+    padding: 0.3rem 0.5rem;
+    margin: -0.3rem -0.5rem;
+}
+
+.HeaderThin_HeaderNavMobile {
+    position: fixed;
+    top: 2rem;
+    right: 1rem;
+    transition: top 0.4s;
+}
+._min .HeaderThin_HeaderNavMobile {
+    top: 1rem;
+}
+
+.HeaderThin_NavDropdown {
+    backdrop-filter: blur(2px);
+    background: hsla(0, 0%, 96%, 0.92);
+    box-shadow: 0 0 0 0 transparent;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 2rem;
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    transition: all 0.6s;
+    width: 100%;
+}
+.HeaderThin_NavDropdown a {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+ }
+.HeaderThin_NavDropdown._open {
+    box-shadow: 0 0.3rem 1rem 0 var(--color-shadow-ll);
+    padding: 2rem;
+    max-height: 40vh;
+}

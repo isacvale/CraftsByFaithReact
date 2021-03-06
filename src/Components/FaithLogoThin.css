@@ -1,0 +1,115 @@
+.FaithLogoThin {
+    --logo-size: 0.9rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: repeat(2, minmax(calc(3 * var(--logo-size)), auto)); */
+    position: relative;
+    width: fit-content;
+    transition: all 0.6s;
+}
+.FaithLogoThin._mobile {
+    width: 100%;
+}
+.FaithLogoThin._min {
+    /* grid-template-rows: auto 0; */
+}
+
+.FaithLogoThin_LeftBar,
+.FaithLogoThin_RightBar {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    max-height: calc(3 * var(--logo-size));
+    max-height: 50px;
+    transition: all 0.6s;
+}
+._min > .FaithLogoThin_RightBar {
+    max-height: 0;
+}
+
+.FaithLogoThin_LeftBar {
+    background-color: var(--color-primary);
+}
+._min > .FaithLogoThin_LeftBar {
+    background-color: transparent;
+    padding-bottom: 0.5rem;
+}
+
+.FaithLogoThin_RightBar {
+    background-color: var(--color-secondary);
+}
+._min > .FaithLogoThin_RightBar {
+    background-color: transparent;
+}
+
+.FaithLogoThin :is(h1, h2) {
+    color: white;
+    font-weight: 400;
+    line-height: 100%;
+    margin: 0 auto;
+    text-transform: none;
+    padding:
+        calc(var(--dashed-margin) + 0.2 * var(--logo-size))
+        calc(var(--dashed-margin) + 0.8 * var(--logo-size))
+    ;
+    text-shadow: 0 0 4px var(--color-shadow-l);
+}
+.FaithLogoThin._mobile :is(h1, h2) {
+    margin: 0;
+}
+
+.FaithLogoThin h1 {
+    font-family: var(--font-title);
+    font-size: calc(2.2 * var(--logo-size));
+    text-transform: uppercase;
+    transform: translateY(calc(0.6 * var(--logo-size)));
+    transition: all 0.6s;
+}
+.FaithLogoThin h2 {
+    font-weight: 200;
+    font-size: calc(1.1 * var(--logo-size));
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    transform: translateY(calc(-0.2 * var(--dashed-margin)));
+}
+._min .FaithLogoThin :is(h1, h2) {
+    text-shadow: 0 0 4px transparent;
+}
+._min .FaithLogoThin h1 {
+    color: var(--color-primary);
+    font-size: calc(1.8 * var(--logo-size));
+}
+._min .FaithLogoThin h2 {
+    color: transparent;
+}
+
+.FaithLogoThin_connector {
+    color: var(--color-accent);
+    display: inline-block;
+    font-size: calc(1.3 * var(--logo-size));
+    transform: rotate(-25deg) translateY(-5px);
+    margin-right: calc(-0.5 * var(--logo-size));
+    text-transform: none;
+}
+
+
+.FaithLogoThin::after {
+    --margin: var(--dashed-margin);
+    /* border: 2px dashed hsla(0, 100%, 100%, .3); */
+    border: 2px dashed var(--color-accent);
+    box-sizing: border-box;
+    content: "";
+    height: calc(100% - var(--margin));
+    left: calc(var(--margin) / 2);
+    pointer-events: none;
+    position: absolute;
+    top: calc(var(--margin) / 2);
+    width: calc(100% - var(--margin));
+    opacity: 1;
+    transition: opacity 0.6s;
+}
+.FaithLogoThin._min::after {
+    opacity: 0;
+}

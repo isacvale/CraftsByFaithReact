@@ -22,12 +22,12 @@ const CartSummaryCheckout = () => {
     )
 }
 
-const CartSummary = observer(() => {
+const CartSummary = observer(props => {
     const { items } = cartStore
     const { index } = productStore
 
     return (
-        <aside className='CartSummary'>
+        <aside className='CartSummary' {...props}>
             {/* <img src={iconCart} alt='Cart summary.'/> */}
             <div className='CartSummaryProductList'>
                 { items.map((item, idx) =>

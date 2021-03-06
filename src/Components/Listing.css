@@ -7,7 +7,7 @@
 .Listing> article {
     position: relative;
 }
-.Listing > article::after {
+:not(._mobile) > .Listing > article::after {
     content: '';
     position: absolute;
     right: -1px;

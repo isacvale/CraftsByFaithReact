@@ -7,7 +7,7 @@ const ContentCanvas = observer(props => {
     const { screen } = uiStore
     const { children, stripped } = props
 
-    const classes = `ContentCanvas ${screen} ${stripped ? '_stripped' : ''}`
+    const classes = `ContentCanvas _${screen} ${stripped ? '_stripped' : ''}`
     
     return (
         <section className={classes}>

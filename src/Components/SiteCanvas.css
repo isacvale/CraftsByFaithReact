@@ -1,12 +1,28 @@
-/* .SiteCanvas {
-} */
+.SiteCanvas {
+  --canvas-margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr repeat(2, auto);
+  grid-template-areas:
+    'header'
+    'main'
+    'nav'
+    'footer';
+}
 
 .SiteCanvas._tablet {
-  margin: 2rem;
+  --canvas-margin: 2rem;
 }
 
 .SiteCanvas._desktop {
-  margin: 2rem auto;
-  max-width: 1600px;
-  width: 90vw;
+  --canvas-margin: max(
+    calc((100vw - 1600px) / 2),
+    5vw
+  );
+  grid-template-columns: 1fr auto;
+  grid-template-rows: min-content 1fr auto;
+  grid-template-areas:
+    'header   header'
+    'main     nav'
+    'footer   footer';
 }

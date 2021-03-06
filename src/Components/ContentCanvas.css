@@ -1,9 +1,12 @@
 .ContentCanvas {
     background: white;
     box-shadow: 0 0 0.4rem 0.4rem hsla(0, 0%, 0%, 0.05);
-    margin: 2rem 0 0;
+    margin: 2rem var(--canvas-margin);
     padding: 2rem;
     position: relative;
+}
+.ContentCanvas._desktop {
+    margin-right: 0;
 }
 
 .ContentCanvas::after {

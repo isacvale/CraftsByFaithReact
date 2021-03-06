@@ -2,6 +2,9 @@ import {
     action,
     observable
 } from 'mobx'
+import {
+    setDebounce
+} from 'Utils'
 
 const mainStore = observable({
     page: '',
@@ -135,6 +138,7 @@ const uiStore = observable({
     screen: 'mobile',
     layout: 'landscape',
     isMenuButtonOpen: false,
+    isPageTop: false,
     setValue: function (prop, value) {
         this[prop] = value
     },
@@ -145,14 +149,22 @@ const uiStore = observable({
             ? 'mobile'
             : this.width <= 1100
                 ? 'tablet'
-                : 'desktop')
+                : 'desktop'
+        )
         this.setValue('layout', this.width
             ? this.layout = 'portrait'
             : this.layout = 'landscape')
     },
+    updateScroll: function () {
+        if (this.isPageTop)
+            this.isPageTop = window.scrollY <= 100
+        else
+            this.isPageTop = window.scrollY === 0
+    }
 }, {
     setValue: action.bound,
     updateScreen: action.bound,
+    updateScroll: action.bound
 })
 
 const display = [
@@ -255,7 +267,10 @@ const display = [
 ]
 
 uiStore.updateScreen()
+uiStore.updateScroll()
 window.addEventListener('resize', uiStore.updateScreen)
+// window.addEventListener('scroll', setDebounce(300, uiStore.updateScroll))
+window.addEventListener('scroll', uiStore.updateScroll)
 
 export {
     cartStore,
