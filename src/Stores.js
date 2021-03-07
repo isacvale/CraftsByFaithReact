@@ -2,6 +2,9 @@ import {
     action,
     observable
 } from 'mobx'
+import {
+    addGlobal
+} from 'Utils'
 
 const mainStore = observable({
     page: '',
@@ -59,6 +62,22 @@ const cartStore = observable({
 })
 
 const productStore = observable({
+    template: {
+        index: null,
+        name: '',
+        price: 0,
+        code: '00',
+        description: '',
+        typeCode: '',
+        typeDescription: '',
+        cautionMessage: null,
+        patternMessage: null,
+        variations: [],
+        allowCustom: false,
+        variationCode: null,
+        customMessage: '',
+        customInitials: ''
+    },
     index: 0,
     name: 'Hugabble Elephant',
     price: 35,
@@ -118,15 +137,21 @@ const productStore = observable({
         this.customMessage = customMessage
         this.customInitials = customInitials
     },
+    // Check if any change was made to the current product, in relation
+    // to its instance on Cart Store.
     get isChanged () {
         const itemIncart = cartStore.items[this.index]
         const change = ['variationCode', 'customMessage', 'customInitials']
             .find(prop => (this[prop] !== itemIncart[prop]))
         return !!change
     },
+    clearProductStore: function (data) {
+        Object.entries(this.template).forEach(entry => this.setValue(entry[0], entry[1]))
+    }
 }, {
     setValue: action.bound,
     loadProduct: action.bound,
+    clearProductStore: action.bound
 })
 
 const uiStore = observable({
@@ -268,6 +293,14 @@ uiStore.updateScroll()
 window.addEventListener('resize', uiStore.updateScreen)
 // window.addEventListener('scroll', setDebounce(300, uiStore.updateScroll))
 window.addEventListener('scroll', uiStore.updateScroll)
+
+addGlobal({
+    cartStore,
+    display,
+    mainStore,
+    productStore,
+    uiStore,
+})
 
 export {
     cartStore,

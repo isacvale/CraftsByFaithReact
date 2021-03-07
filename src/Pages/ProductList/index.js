@@ -16,7 +16,7 @@ const ProductList = () => {
                     <Listing />
                 </ContentCanvas>
             </main>
-            <CartSummary  style={{ gridArea: 'nav' }}/>
+            <CartSummary style={{ gridArea: 'nav' }} noSelection/>
         </SiteCanvas>
     )
 }

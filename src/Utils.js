@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react'
 
+const addGlobal = (data) => {
+    window.g || (window.g = {})
+    Object.assign(window.g, data)
+}
+
 const setDebounce = (delay, callback, ...args) => {
     let hash = Math.random()
     const setNewHash = () => {
@@ -27,6 +32,7 @@ const useAnimationConfirm = (prop, delay = 600) => {
 }
 
 export {
+    addGlobal,
     setDebounce,
     useAnimationConfirm,
 }

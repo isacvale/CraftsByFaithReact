@@ -12,7 +12,7 @@ const ListingProduct = props => {
     return (
         <article className='ListingProduct'>
             <img alt="" src={`${image}?random=${alias}`}/>
-            <div>
+            <div className='ListingProduct_tag'>
                 <h1 className='ListingProduct_name'>{name}</h1>
                 <div className='ListingProduct_price'>{price}</div>
                 <button className='ListingProduct_show interactive'>Show details</button>
